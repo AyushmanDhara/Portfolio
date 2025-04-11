@@ -1133,7 +1133,7 @@
     display: inline-block;
     margin-right: 1rem;
     margin-top: 0.5rem;
-    color: #00d8ff; /* Bright cyan links */
+    color: #f10a76; /* Bright cyan links */
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
