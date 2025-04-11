@@ -1,5 +1,29 @@
 
-        /* :root {
+            :root {
+                --primary: #00d1ff;
+                --secondary: #ff00aa;
+                --dark: #0a0a14;
+                --light: #f0f8ff;
+                --accent: #ff5500;
+                --neon-glow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--secondary);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Courier New', monospace;
+            }
+
+            body {
+                background-color: var(--dark);
+                color: var(--light);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+       
+       
+       /* :root {
             --primary: #00d1ff;
             --secondary: #ff00aa;
             --dark: #0a0a14;
@@ -114,7 +138,7 @@
         
         /* Hero Section with gap from header */
         #hero {
-            height: 100vh;
+            min-height: 100vh;
             padding-top: 100px;
             display: flex;
             align-items: center;
@@ -228,6 +252,7 @@
         
         /* About Section */
         #about {
+            
             padding: 150px 0;
             background-color: var(--dark);
             position: relative;
@@ -423,29 +448,7 @@
             animation: progressShine 2s infinite;
         }
         
-        /* Experience Section with OPERATIONAL LOG animation */
-        :root {
-            --primary: #00d1ff;
-            --secondary: #ff00aa;
-            --dark: #0a0a14;
-            --light: #f0f8ff;
-            --accent: #ff5500;
-            --neon-glow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--secondary);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', monospace;
-        }
-        
-        body {
-            background-color: var(--dark);
-            color: var(--light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+ 
         
         /* Header Styles */
         header {
@@ -1081,3 +1084,63 @@
                 margin: 0 10px;
             }
         }
+
+
+/* === Projects Section === */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: #020a18; /* Dark card background */
+    border: 1px solid #1a1a1a;
+    border-radius: 16px;
+    padding: 2rem;
+    color: #e0e0e0; /* Light text */
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15); /* Cyan glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); /* Brighter on hover */
+}
+
+.project-card h3 {
+    color: #00eaff; /* Neon cyan title */
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #cccccc; /* Softer white */
+}
+
+.project-card ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #bbbbbb;
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    color: #00d8ff; /* Bright cyan links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: #ffffff;
+}
+
+  
