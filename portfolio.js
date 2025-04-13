@@ -46,3 +46,52 @@
                 header.style.backgroundColor = 'rgba(10, 10, 20, 0.9)';
             }
         });
+
+
+        // Matrix binary rain effect
+const canvas = document.getElementById("binary-canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const binary = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array.from({ length: columns }, () => 1);
+
+function drawMatrix() {
+  // Fade effect (50%)
+  ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Cyan binary
+  ctx.fillStyle = "rgba(18, 181, 245, 0.42)";
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = binary[Math.floor(Math.random() * binary.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+    drops[i]++;
+  }
+}
+
+setInterval(drawMatrix, 33);
+
+// Hide loader & show content after loading
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+  const main = document.getElementById("main-content");
+
+  setTimeout(() => {
+    loader.style.opacity = "0";
+    setTimeout(() => {
+      loader.style.display = "none";
+      main.style.display = "block";
+    }, 500);
+  }, 3800);
+});
